@@ -1,31 +1,15 @@
-package com.eam.RestaurantApp.entity;
+package com.eam.RestaurantApp.dto;
 
-import javax.persistence.*;
+public class MesaDTO {
 
-@Entity
-@Table(name="mesa")
-public class Mesa {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idMesa;
     private int numeroMesa;
     private boolean estadoMesa;
 
-    public Mesa(){ }
+    public MesaDTO(){}
 
-    public Mesa(int idMenu, boolean estadoMesa) {
-        this.idMesa = idMenu;
+    public MesaDTO(int numeroMesa, boolean estadoMesa) {
         this.numeroMesa = numeroMesa;
         this.estadoMesa = estadoMesa;
-    }
-
-    public int getIdMesa() {
-        return idMesa;
-    }
-
-    public void setIdMenu(int idMesa) {
-        this.idMesa = idMesa;
     }
 
     public int getNumeroMesa() {
