@@ -8,24 +8,24 @@ public class Mesa {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idMenu;
+    private int idMesa;
     private int numeroMesa;
     private boolean estadoMesa;
 
     public Mesa(){ }
 
     public Mesa(int idMenu, boolean estadoMesa) {
-        this.idMenu = idMenu;
+        this.idMesa = idMenu;
         this.numeroMesa = numeroMesa;
         this.estadoMesa = estadoMesa;
     }
 
-    public int getIdMenu() {
-        return idMenu;
+    public int getIdMesa() {
+        return idMesa;
     }
 
-    public void setIdMenu(int idMenu) {
-        this.idMenu = idMenu;
+    public void setIdMenu(int idMesa) {
+        this.idMesa = idMesa;
     }
 
     public int getNumeroMesa() {
