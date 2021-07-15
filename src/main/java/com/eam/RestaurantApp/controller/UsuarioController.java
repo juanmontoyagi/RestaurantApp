@@ -42,4 +42,9 @@ public class UsuarioController {
     public void update(@RequestBody @Valid Usuario usuario, @PathVariable("idUsuario") Integer idUsuario){
         usuarioService.update(idUsuario, usuario);
     }
+
+    @DeleteMapping("/{idUsuario}")
+    public void delete(@PathVariable("idUsuario") Integer idUsuario){
+        usuarioService.delete(idUsuario);
+    }
 }

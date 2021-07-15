@@ -11,7 +11,6 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 @Transactional
@@ -54,12 +53,5 @@ public class MesaService {
            throw new NotFoundException("No existe una mesa con el ID: "+idMesa, "mesa_doesnt_exist");
        mesaRepository.deleteById(idMesa);
     }
-/*
-    public Mesa findMesa(Integer numeroMesa){
-        boolean mesaNumero = mesaRepository.findByNumeroMesa(numeroMesa);
-        if (!mesaNumero)
-            System.out.println("No existe.");
-        return mesaRepository.findByNumeroMesa(numeroMesa).getNumeroMesa();
-    } */
 
 }

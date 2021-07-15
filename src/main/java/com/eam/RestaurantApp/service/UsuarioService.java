@@ -5,7 +5,6 @@ import com.eam.RestaurantApp.exception.BusinessException;
 import com.eam.RestaurantApp.exception.NotFoundException;
 import com.eam.RestaurantApp.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
@@ -48,6 +47,12 @@ public class UsuarioService {
         user.setIdUsuario(idUsuario);
         usuarioRepository.save(user);
         return user;
+    }
+
+    public void delete(Integer idUsuario){
+        boolean usuario = usuarioRepository.existsById(idUsuario);
+        if (!usuario) throw new NotFoundException("No se encontró usuario con el ID "+idUsuario, "usuarios_doesnt_exist");
+        usuarioRepository.deleteById(idUsuario);
     }
 
 }
