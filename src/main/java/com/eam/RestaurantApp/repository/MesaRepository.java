@@ -10,9 +10,8 @@ import java.util.Optional;
 @Repository
 public interface MesaRepository extends JpaRepository<Mesa, Integer> {
 
-   /* @Query("SELECT p FROM Mesa p WHERE p.numeroMesa = :numeroMesa")
-    Mesa findByNumeroMesa(int numeroMesa);*/
+    @Query("SELECT m FROM Mesa m where LOWER(m.numeroMesa) like LOWER(:numeroMesa)")
+    Mesa findByNumeroMesa(int numeroMesa);
 
-    //boolean existByNumeroMesa(int numeroMesa);
 
 }

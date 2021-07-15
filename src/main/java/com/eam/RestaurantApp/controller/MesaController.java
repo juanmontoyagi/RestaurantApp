@@ -23,12 +23,27 @@ public class MesaController {
 
     @GetMapping("listarMesas")
     public List<Mesa> listaMesas(){
-        return mesaService.listarMesas();
+        return mesaService.listMesas();
     }
 
     @PostMapping("/crearMesa")
-    public void crearMesa(@RequestBody Mesa mesa){
+    public void save(@RequestBody Mesa mesa){
         mesaService.saveMesa(mesa);
+    }
+
+    @PutMapping("/{idMesa}")
+    public void update(@RequestBody Mesa mesa, @PathVariable("idMesa") Integer idMesa){
+        mesaService.update(idMesa, mesa);
+    }
+
+    @GetMapping("/{idMesa}")
+    public Mesa find(@PathVariable("idMesa") Integer idMesa){
+        return mesaService.find(idMesa);
+    }
+
+    @DeleteMapping("/{idMesa}")
+    public void delete(@PathVariable("idMesa") Integer idMesa){
+        mesaService.delete(idMesa);
     }
 
 }

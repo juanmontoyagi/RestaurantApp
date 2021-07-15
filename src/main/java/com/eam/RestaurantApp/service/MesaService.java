@@ -17,7 +17,7 @@ public class MesaService {
     @Autowired
     MesaRepository mesaRepository;
 
-   public List<Mesa> listarMesas(){
+   public List<Mesa> listMesas(){
         return mesaRepository.findAll();
     }
 
@@ -28,5 +28,35 @@ public class MesaService {
         mesaRepository.save(mesa);
         return mesa;
     }
+
+    public Mesa find(Integer idMesa){
+       boolean mesa = mesaRepository.existsById(idMesa);
+       if (!mesa)
+           System.out.println("No existe");
+       return mesaRepository.findById(idMesa).get();
+    }
+
+    public Mesa update(Integer idMesa, Mesa m){
+       boolean mesa = mesaRepository.existsById(idMesa);
+       if (!mesa)
+           System.out.println("No existe");
+       m.setIdMesa(idMesa);
+       mesaRepository.save(m);
+       return m;
+    }
+
+    public void delete(Integer idMesa){
+       boolean mesa = mesaRepository.existsById(idMesa);
+       if (!mesa)
+           System.out.println("No existe");
+       mesaRepository.deleteById(idMesa);
+    }
+/*
+    public Mesa findMesa(Integer numeroMesa){
+        boolean mesaNumero = mesaRepository.findByNumeroMesa(numeroMesa);
+        if (!mesaNumero)
+            System.out.println("No existe.");
+        return mesaRepository.findByNumeroMesa(numeroMesa).getNumeroMesa();
+    } */
 
 }

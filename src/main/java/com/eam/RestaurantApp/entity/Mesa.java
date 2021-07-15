@@ -24,7 +24,7 @@ public class Mesa {
         return idMesa;
     }
 
-    public void setIdMenu(int idMesa) {
+    public void setIdMesa(int idMesa) {
         this.idMesa = idMesa;
     }
 
