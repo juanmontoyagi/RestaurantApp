@@ -10,8 +10,4 @@ import java.util.Optional;
 @Repository
 public interface MesaRepository extends JpaRepository<Mesa, Integer> {
 
-    @Query("SELECT m FROM Mesa m where LOWER(m.numeroMesa) like LOWER(:numeroMesa)")
-    Mesa findByNumeroMesa(int numeroMesa);
-
-
 }

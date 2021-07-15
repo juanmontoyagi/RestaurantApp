@@ -9,14 +9,14 @@ public class Mesa {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idMesa;
-    private int numeroMesa;
+    private String descripcionMesa;
     private boolean estadoMesa;
 
     public Mesa(){ }
 
-    public Mesa(int idMenu, boolean estadoMesa) {
-        this.idMesa = idMenu;
-        this.numeroMesa = numeroMesa;
+    public Mesa(int idMesa, boolean estadoMesa) {
+        this.idMesa = idMesa;
+        this.descripcionMesa = descripcionMesa;
         this.estadoMesa = estadoMesa;
     }
 
@@ -28,12 +28,12 @@ public class Mesa {
         this.idMesa = idMesa;
     }
 
-    public int getNumeroMesa() {
-        return numeroMesa;
+    public String getDescripcionMesa() {
+        return descripcionMesa;
     }
 
-    public void setNumeroMesa(int numeroMesa) {
-        this.numeroMesa = numeroMesa;
+    public void setDescripcionMesa(String descripcionMesa) {
+        this.descripcionMesa = descripcionMesa;
     }
 
     public boolean isEstadoMesa() {
