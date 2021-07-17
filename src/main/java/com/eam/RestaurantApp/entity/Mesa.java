@@ -3,21 +3,24 @@ package com.eam.RestaurantApp.entity;
 import javax.persistence.*;
 
 @Entity
-@Table(name="mesa")
+@Table(name="mesas")
 public class Mesa {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idMesa;
-    private String descripcionMesa;
+    private int numeroMesa;
     private boolean estadoMesa;
+    private String ocupacionMesa;
+
 
     public Mesa(){ }
 
-    public Mesa(int idMesa, boolean estadoMesa) {
+    public Mesa(int idMesa, int numeroMesa, boolean estadoMesa, String ocupacionMesa) {
         this.idMesa = idMesa;
-        this.descripcionMesa = descripcionMesa;
+        this.numeroMesa = numeroMesa;
         this.estadoMesa = estadoMesa;
+        this.ocupacionMesa = ocupacionMesa;
     }
 
     public int getIdMesa() {
@@ -28,12 +31,12 @@ public class Mesa {
         this.idMesa = idMesa;
     }
 
-    public String getDescripcionMesa() {
-        return descripcionMesa;
+    public int getNumeroMesa() {
+        return numeroMesa;
     }
 
-    public void setDescripcionMesa(String descripcionMesa) {
-        this.descripcionMesa = descripcionMesa;
+    public void setNumeroMesa(int numeroMesa) {
+        this.numeroMesa = numeroMesa;
     }
 
     public boolean isEstadoMesa() {
@@ -42,5 +45,13 @@ public class Mesa {
 
     public void setEstadoMesa(boolean estadoMesa) {
         this.estadoMesa = estadoMesa;
+    }
+
+    public String getOcupacionMesa() {
+        return ocupacionMesa;
+    }
+
+    public void setOcupacionMesa(String ocupacionMesa) {
+        this.ocupacionMesa = ocupacionMesa;
     }
 }

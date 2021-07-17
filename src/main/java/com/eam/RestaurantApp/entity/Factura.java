@@ -1,8 +1,11 @@
 package com.eam.RestaurantApp.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.util.Date;
 
 @Entity
 @Table(name = "factura")
@@ -11,25 +14,28 @@ public class Factura {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idFactura;
-    private double precioFactura;
+    private double totalPagar;
     private String descripcionFactura;
 
-    @Column(name = "MESA_idMesa")
-    @NotNull
-    private int idMesa;
+    private boolean estadoFactura;
 
-    @Column(name = "USUARIO_idUsuario")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
+    private Date facturaFecha;
+
+    @Column(name = "PEDIDOS_idPedidos")
     @NotNull
-    private int idUsuario;
+    private int idPedido;
 
     public Factura(){}
 
-    public Factura(int idFactura, double precioFactura, String descripcionFactura, @NotNull int idMesa, @NotNull int idUsuario) {
+    public Factura(int idFactura, double totalPagar, String descripcionFactura,
+                   boolean estadoFactura, Date facturaFecha, @NotNull int idPedido) {
         this.idFactura = idFactura;
-        this.precioFactura = precioFactura;
+        this.totalPagar = totalPagar;
         this.descripcionFactura = descripcionFactura;
-        this.idMesa = idMesa;
-        this.idUsuario = idUsuario;
+        this.estadoFactura = estadoFactura;
+        this.facturaFecha = facturaFecha;
+        this.idPedido = idPedido;
     }
 
     public int getIdFactura() {
@@ -40,12 +46,12 @@ public class Factura {
         this.idFactura = idFactura;
     }
 
-    public double getPrecioFactura() {
-        return precioFactura;
+    public double getTotalPagar() {
+        return totalPagar;
     }
 
-    public void setPrecioFactura(double precioFactura) {
-        this.precioFactura = precioFactura;
+    public void setTotalPagar(double totalPagar) {
+        this.totalPagar = totalPagar;
     }
 
     public String getDescripcionFactura() {
@@ -56,19 +62,27 @@ public class Factura {
         this.descripcionFactura = descripcionFactura;
     }
 
-    public int getIdMesa() {
-        return idMesa;
+    public boolean isEstadoFactura() {
+        return estadoFactura;
     }
 
-    public void setIdMesa(int idMesa) {
-        this.idMesa = idMesa;
+    public void setEstadoFactura(boolean estadoFactura) {
+        this.estadoFactura = estadoFactura;
     }
 
-    public int getIdUsuario() {
-        return idUsuario;
+    public Date getFacturaFecha() {
+        return facturaFecha;
     }
 
-    public void setIdUsuario(int idUsuario) {
-        this.idUsuario = idUsuario;
+    public void setFacturaFecha(Date facturaFecha) {
+        this.facturaFecha = facturaFecha;
+    }
+
+    public int getIdPedido() {
+        return idPedido;
+    }
+
+    public void setIdPedido(int idPedido) {
+        this.idPedido = idPedido;
     }
 }
