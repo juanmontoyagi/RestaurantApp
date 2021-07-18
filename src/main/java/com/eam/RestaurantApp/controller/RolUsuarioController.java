@@ -23,7 +23,7 @@ public class RolUsuarioController {
     private void create(@RequestBody @Valid RolUsuario rolUsuario){
         rolUsuarioService.create(rolUsuario);
     }
-/*
+/* PARA QUÉ ACTUALIZAR, SE PUEDE BORRAR Y VOLVER A ASIGNARLE EL ROL
     @PutMapping("/{idRolUsuario}")
     private void update(@PathVariable("idRolUsuario") Integer idRolUsuario, @RequestBody RolUsuario rolUsuario){
         rolUsuarioService.update(idRolUsuario, rolUsuario);
