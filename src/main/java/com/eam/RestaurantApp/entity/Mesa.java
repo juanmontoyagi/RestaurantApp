@@ -11,16 +11,19 @@ public class Mesa {
     private int idMesa;
     private int numeroMesa;
     private boolean estadoMesa;
-    private String ocupacionMesa;
+    private int ocupacionMesa;
 
+    @Column(name = "USUARIOS_idUsuario")
+    private int idUsuario;
 
     public Mesa(){ }
 
-    public Mesa(int idMesa, int numeroMesa, boolean estadoMesa, String ocupacionMesa) {
+    public Mesa(int idMesa, int numeroMesa, boolean estadoMesa, int ocupacionMesa, int idUsuario) {
         this.idMesa = idMesa;
         this.numeroMesa = numeroMesa;
         this.estadoMesa = estadoMesa;
         this.ocupacionMesa = ocupacionMesa;
+        this.idUsuario = idUsuario;
     }
 
     public int getIdMesa() {
@@ -47,11 +50,19 @@ public class Mesa {
         this.estadoMesa = estadoMesa;
     }
 
-    public String getOcupacionMesa() {
+    public int getOcupacionMesa() {
         return ocupacionMesa;
     }
 
-    public void setOcupacionMesa(String ocupacionMesa) {
+    public void setOcupacionMesa(int ocupacionMesa) {
         this.ocupacionMesa = ocupacionMesa;
+    }
+
+    public int getIdUsuario() {
+        return idUsuario;
+    }
+
+    public void setIdUsuario(int idUsuario) {
+        this.idUsuario = idUsuario;
     }
 }

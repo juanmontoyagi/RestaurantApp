@@ -29,7 +29,7 @@ public class MesaController {
         return mesaService.find(idMesa);
     }
 
-    @PostMapping("/crearMesa")
+    @PostMapping
     public void save(@RequestBody @Valid Mesa mesa){
         mesaService.saveMesa(mesa);
     }
