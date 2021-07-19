@@ -13,12 +13,12 @@ public class Pedido implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idPedido;
+    private int idPedidos;
     private boolean estadoPedido;
 
-    @Column(name = "MESA_idMesa")
+    @Column(name = "MESAS_idMesa")
     private int idMesa;
-    @Column(name = "MESA_USUARIOS_idUsuario")
+    @Column(name = "MESAS_USUARIOS_idUsuario")
     private int idUsuario;
 
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
@@ -26,8 +26,8 @@ public class Pedido implements Serializable {
 
     public Pedido() { }
 
-    public Pedido(int idPedido, boolean estadoPedido, int idMesa, int idUsuario, Date fechaPedido) {
-        this.idPedido = idPedido;
+    public Pedido(int idPedidos, boolean estadoPedido, int idMesa, int idUsuario, Date fechaPedido) {
+        this.idPedidos = idPedidos;
         this.estadoPedido = estadoPedido;
         this.idMesa = idMesa;
         this.idUsuario = idUsuario;
@@ -35,11 +35,11 @@ public class Pedido implements Serializable {
     }
 
     public int getIdPedido() {
-        return idPedido;
+        return idPedidos;
     }
 
-    public void setIdPedido(int idPedido) {
-        this.idPedido = idPedido;
+    public void setIdPedido(int idPedidos) {
+        this.idPedidos = idPedidos;
     }
 
     public boolean isEstadoPedido() {
