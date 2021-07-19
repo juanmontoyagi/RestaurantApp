@@ -9,6 +9,6 @@ import java.util.List;
 @Repository
 public interface FacturaRepository extends JpaRepository<Factura, Integer> {
 
-    List<Factura> findByIdFactura(Integer idFactura);
+    //BUSCAR POR PEDIDO
 
 }
